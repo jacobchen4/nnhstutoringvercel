@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table>
+        <!--Table categories-->
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Created By<th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Loop through each distinct share and display the information as a row under the categories-->
+            {% for subject in links %}
+            <tr>
+                <td><a href="/{{links[subject]}}">{{subject}}</a></td>
+                <td>{{creators[subject]}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        {% if error %}
+        {% block content %}
+        <h1>{{errormsg}}</h1>
+        <p></p>
+        {% endblock content %}
+        {% endif %}
+        <button class="btn btn-primary" type="submit" style="background-color:#ff6030;border-color:#ff7300">Log In</button>
+    </form>
+{% endblock %}

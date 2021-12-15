@@ -1,0 +1,19 @@
+ {% extends "layout.html" %}
+
+{% block main %}
+    <table>
+        <!--Table categories-->
+        <thead>
+            <tr>
+                <th>Past Tutoring Session Forms</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Loop through each distinct share and display the information as a row under the categories-->
+            {% for doc in folder %}
+            <tr>
+                <td><a href="{{folder[doc]}}">{{doc}}</a></td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}
